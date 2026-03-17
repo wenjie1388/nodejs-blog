@@ -1,0 +1,198 @@
+// 全局样式
+:root {
+  --bg-primary: #fffbef;
+  --bg-secondary: #ffffff;
+  --bg-dark: #000000;
+  --text-primary: #000000;
+  --text-secondary: #828282;
+  --text-light: #ffffff;
+  --border-color: #e6e6e6;
+  --accent-primary: #ff0000;
+  --accent-secondary: #d9d9d9;
+  --success-color: #00b800;
+  --error-color: #ff0000;
+  
+  --font-display: 'Inter Tight', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --transition-fluid: cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-snap: cubic-bezier(0.87, 0, 0.13, 1);
+  
+  --nav-height: 70px;
+  --max-width: 1400px;
+  --section-padding: 120px;
+}
+
+// 深色主题
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: #404040;
+}
+
+// 清新主题
+[data-theme="fresh"] {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #ffffff;
+  --text-primary: #2d5016;
+  --accent-primary: #22c55e;
+  --border-color: #dcfce7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.5s var(--transition-fluid),
+              color 0.5s var(--transition-fluid);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--text-secondary);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// 容器
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+// 页面过渡
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+// 选中文字样式
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--text-light);
+}
+
+// 工具类
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(var(--bg-secondary), 0.8);
+}
+
+// 动画
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s var(--transition-fluid) forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+// 响应式
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+    --nav-height: 60px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
