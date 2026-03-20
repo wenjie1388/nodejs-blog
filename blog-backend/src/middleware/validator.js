@@ -1,5 +1,5 @@
 const { body, param, query, validationResult } = require('express-validator');
-const Response = require('../utils/response');
+const Response = require('@/utils/response');
 
 // 处理验证错误
 const handleValidationErrors = (req, res, next) => {

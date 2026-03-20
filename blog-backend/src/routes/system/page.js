@@ -7,6 +7,11 @@ const { del } = require('@/config/redis');
 const Response = require('@/utils/response');
 const { authenticateToken, requireAdmin, optionalAuth } = require('@/middleware/auth');
 const { pageValidation, idParamValidation, paginationValidation } = require('@/middleware/validator');
+const { query } = require('@/config/database');
+const { del } = require('@/config/redis');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin, optionalAuth } = require('@/middleware/auth');
+const { pageValidation, idParamValidation, paginationValidation } = require('@/middleware/validator');
 
 // 页面文件存储目录
 const PAGES_DIR = path.join(__dirname, '@/views/static');

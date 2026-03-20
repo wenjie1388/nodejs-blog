@@ -178,7 +178,7 @@ router.put('/sort/batch', authenticateToken, requireAdmin, async (req, res) => {
     }
     
     // 使用事务批量更新
-    const { transaction } = require('../config/database');
+    const { transaction } = require('@/config/database');
     await transaction(async (connection) => {
       for (const item of items) {
         await connection.execute(

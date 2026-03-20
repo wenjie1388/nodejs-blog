@@ -35,8 +35,5 @@
     "express"
   ],
   "author": "",
-  "license": "MIT",
-  "_moduleAliases": {
-    "@": "./src"
-  }
+  "license": "MIT"
 }

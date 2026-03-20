@@ -44,5 +44,6 @@ export default defineConfig({
         },
       },
     },
+    chunkSizeWarningLimit: 1000, // 将警告阈值改为 1000KB
   },
 })
