@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { query } = require('../config/database');
-const { getOrSet, del } = require('../config/redis');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin } = require('../middleware/auth');
-const { dictTypeValidation, dictDataValidation, idParamValidation, paginationValidation } = require('../middleware/validator');
+const { query } = require('@/config/database');
+const { getOrSet, del } = require('@/config/redis');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin } = require('@/middleware/auth');
+const { dictTypeValidation, dictDataValidation, idParamValidation, paginationValidation } = require('@/middleware/validator');
 
 const DICT_CACHE_PREFIX = 'dict:';
 const DICT_TYPE_CACHE_KEY = 'dict:types';

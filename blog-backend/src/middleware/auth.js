@@ -1,6 +1,6 @@
-const { verifyToken, extractTokenFromHeader } = require('../utils/jwt');
-const Response = require('../utils/response');
-const { query } = require('../config/database');
+const { verifyToken, extractTokenFromHeader } = require('@/utils/jwt');
+const Response = require('@/utils/response');
+const { query } = require('@/config/database');
 
 // 验证JWT token
 async function authenticateToken(req, res, next) {

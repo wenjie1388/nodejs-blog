@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { query } = require('../config/database');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin } = require('../middleware/auth');
-const { menuValidation, idParamValidation } = require('../middleware/validator');
+const { query } = require('@/config/database');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin } = require('@/middleware/auth');
+const { menuValidation, idParamValidation } = require('@/middleware/validator');
 
 // 获取所有菜单（树形结构）
 router.get('/', async (req, res) => {
@@ -178,7 +178,7 @@ router.put('/sort/batch', authenticateToken, requireAdmin, async (req, res) => {
     }
     
     // 使用事务批量更新
-    const { transaction } = require('../config/database');
+    const { transaction } = require('@/config/database');
     await transaction(async (connection) => {
       for (const item of items) {
         await connection.execute(

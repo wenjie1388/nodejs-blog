@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { query } = require('../config/database');
-const { getOrSet, del } = require('../config/redis');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin, optionalAuth } = require('../middleware/auth');
-const { articleValidation, idParamValidation, paginationValidation } = require('../middleware/validator');
+const { query } = require('@/config/database');
+const { getOrSet, del } = require('@/config/redis');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin, optionalAuth } = require('@/middleware/auth');
+const { articleValidation, idParamValidation, paginationValidation } = require('@/middleware/validator');
 
 // 生成文章摘要
 function generateExcerpt(content, maxLength = 200) {

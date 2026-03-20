@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { query } = require('../config/database');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin } = require('../middleware/auth');
+const { query } = require('@/config/database');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin } = require('@/middleware/auth');
 
 // 获取仪表盘统计数据（管理员）
 router.get('/dashboard', authenticateToken, requireAdmin, async (req, res) => {

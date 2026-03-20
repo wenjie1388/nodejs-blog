@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { query } = require('../config/database');
-const { set, get } = require('../config/redis');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin } = require('../middleware/auth');
-const { themeValidation, idParamValidation } = require('../middleware/validator');
+const { query } = require('@/config/database');
+const { set, get } = require('@/config/redis');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin } = require('@/middleware/auth');
+const { themeValidation, idParamValidation } = require('@/middleware/validator');
 
 // 获取所有主题
 router.get('/', async (req, res) => {
