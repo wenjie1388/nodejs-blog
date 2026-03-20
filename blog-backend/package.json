@@ -34,6 +34,13 @@
     "nodejs",
     "express"
   ],
+  "_moduleAliases": {
+    "@": "src",
+    "@config": "src/config",
+    "@routes": "src/routes",
+    "@middleware": "src/middleware",
+    "@utils": "src/utils"
+  },
   "author": "",
   "license": "MIT"
 }

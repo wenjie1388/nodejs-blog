@@ -6,8 +6,6 @@ const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 const Response = require('@/utils/response');
 const { authenticateToken, requireAdmin } = require('@/middleware/auth');
-const Response = require('@/utils/response');
-const { authenticateToken, requireAdmin } = require('@/middleware/auth');
 
 // 确保上传目录存在
 const uploadDir = path.join(__dirname, '../uploads');
