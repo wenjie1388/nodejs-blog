@@ -1,3 +1,5 @@
+require('module-alias/register');
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -6,21 +8,21 @@ const morgan = require('morgan');
 const path = require('path');
 require('dotenv').config();
 
-const { testConnection } = require('./config/database');
-const { testRedis } = require('./config/redis');
+const { testConnection } = require('@/config/database');
+const { testRedis } = require('@/config/redis');
 
 // 路由
-const authRoutes = require('./routes/auth/auth');
-const userRoutes = require('./routes/user/user');
-const articleRoutes = require('./routes/article/article');
-const categoryRoutes = require('./routes/article/category');
-const menuRoutes = require('./routes/system/menu');
-const themeRoutes = require('./routes/system/theme');
-const pageRoutes = require('./routes/system/page');
-const uploadRoutes = require('./routes/upload/upload');
-const statsRoutes = require('./routes/system/stats');
-const dictRoutes = require('./routes/system/dict');
-const tagRoutes = require('./routes/article/tag');
+const authRoutes = require('@/routes/auth/auth');
+const userRoutes = require('@/routes/user/user');
+const articleRoutes = require('@/routes/article/article');
+const categoryRoutes = require('@/routes/article/category');
+const menuRoutes = require('@/routes/system/menu');
+const themeRoutes = require('@/routes/system/theme');
+const pageRoutes = require('@/routes/system/page');
+const uploadRoutes = require('@/routes/upload/upload');
+const statsRoutes = require('@/routes/system/stats');
+const dictRoutes = require('@/routes/system/dict');
+const tagRoutes = require('@/routes/article/tag');
 
 const app = express();
 

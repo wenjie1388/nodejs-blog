@@ -1,11 +1,11 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const { query } = require('../config/database');
-const { generateToken } = require('../utils/jwt');
-const Response = require('../utils/response');
-const { loginValidation, registerValidation } = require('../middleware/validator');
-const { authenticateToken } = require('../middleware/auth');
+const { query } = require('@/config/database');
+const { generateToken } = require('@/utils/jwt');
+const Response = require('@/utils/response');
+const { loginValidation, registerValidation } = require('@/middleware/validator');
+const { authenticateToken } = require('@/middleware/auth');
 
 // 登录
 router.post('/login', loginValidation, async (req, res) => {

@@ -1,10 +1,10 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const { query } = require('../config/database');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin } = require('../middleware/auth');
-const { paginationValidation } = require('../middleware/validator');
+const { query } = require('@/config/database');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin } = require('@/middleware/auth');
+const { paginationValidation } = require('@/middleware/validator');
 
 // 获取用户列表（管理员）
 router.get('/', authenticateToken, requireAdmin, paginationValidation, async (req, res) => {

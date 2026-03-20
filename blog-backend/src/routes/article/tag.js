@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { query } = require('../config/database');
-const { getOrSet, del } = require('../config/redis');
-const Response = require('../utils/response');
-const { authenticateToken, requireAdmin } = require('../middleware/auth');
+const { query } = require('@/config/database');
+const { getOrSet, del } = require('@/config/redis');
+const Response = require('@/utils/response');
+const { authenticateToken, requireAdmin } = require('@/middleware/auth');
 
 const TAG_CACHE_PREFIX = 'tag:';
 const TAG_LIST_CACHE_KEY = 'tag:list';
